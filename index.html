@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Automated Email Campaign Portal</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Arial,sans-serif;
+
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#1e293b,
+#2563eb
+);
+
+min-height:100vh;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+header{
+
+padding:25px 60px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(255,255,255,0.05);
+
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid rgba(255,255,255,0.1);
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:bold;
+
+letter-spacing:1px;
+
+}
+
+.logo span{
+
+color:#60a5fa;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+margin-left:30px;
+
+font-size:16px;
+
+transition:0.3s;
+
+}
+
+nav a:hover{
+
+color:#93c5fd;
+
+}
+
+.hero{
+
+padding:90px 60px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+}
+
+.hero-left{
+
+max-width:650px;
+
+}
+
+.hero-left h1{
+
+font-size:58px;
+
+line-height:1.2;
+
+margin-bottom:25px;
+
+}
+
+.hero-left p{
+
+font-size:19px;
+
+line-height:1.9;
+
+color:#dbeafe;
+
+margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+background:#3b82f6;
+
+color:white;
+
+padding:18px 35px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:bold;
+
+transition:0.3s;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+}
+
+.primary-btn:hover{
+
+background:#2563eb;
+
+transform:translateY(-3px);
+
+}
+
+.secondary-btn{
+
+border:1px solid rgba(255,255,255,0.2);
+
+padding:18px 35px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+color:white;
+
+font-size:18px;
+
+transition:0.3s;
+
+}
+
+.secondary-btn:hover{
+
+background:rgba(255,255,255,0.08);
+
+}
+
+.hero-right{
+
+margin-top:30px;
+
+background:rgba(255,255,255,0.08);
+
+padding:35px;
+
+border-radius:18px;
+
+width:350px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+
+}
+
+.hero-right h3{
+
+margin-bottom:25px;
+
+font-size:24px;
+
+}
+
+.feature-item{
+
+padding:14px 0;
+
+border-bottom:1px solid rgba(255,255,255,0.08);
+
+font-size:16px;
+
+color:#e2e8f0;
+
+}
+
+.feature-item:last-child{
+
+border:none;
+
+}
+
+.section{
+
+padding:70px 60px;
+
+}
+
+.section-title{
+
+text-align:center;
+
+font-size:42px;
+
+margin-bottom:50px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,0.08);
+
+padding:30px;
+
+border-radius:18px;
+
+backdrop-filter:blur(10px);
+
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-6px);
+
+background:rgba(255,255,255,0.12);
+
+}
+
+.card h3{
+
+margin-bottom:15px;
+
+font-size:24px;
+
+}
+
+.card p{
+
+line-height:1.8;
+
+color:#dbeafe;
+
+}
+
+footer{
+
+margin-top:60px;
+
+padding:40px;
+
+text-align:center;
+
+background:rgba(255,255,255,0.05);
+
+border-top:1px solid rgba(255,255,255,0.1);
+
+}
+
+footer h2{
+
+margin-bottom:15px;
+
+}
+
+footer p{
+
+line-height:1.9;
+
+color:#dbeafe;
+
+}
+
+.glow{
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:rgba(59,130,246,0.2);
+
+border-radius:50%;
+
+filter:blur(120px);
+
+z-index:-1;
+
+}
+
+.glow1{
+top:-150px;
+left:-150px;
+}
+
+.glow2{
+bottom:-150px;
+right:-150px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<header>
+
+<div class="logo">
+
+Automated<span>EmailPortal</span>
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#">Features</a>
+
+<a href="#">Automation</a>
+
+<a href="#">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+
+Enterprise Email Automation Platform
+
+</h1>
+
+<p>
+
+Long-term automated workflow solution powered by
+n8n backend automation.
+
+Designed for scalable digital campaign management,
+paperless workflow automation,
+and enterprise-grade email processing.
+
+</p>
+
+<div class="hero-buttons">
+
+<a
+class="primary-btn"
+
+href="https://dodla7788.app.n8n.cloud/form/a3446fb6-c7db-45cb-96e8-94740b07ddb4"
+
+target="_blank"
+>
+
+Launch Portal
+
+</a>
+
+<a
+class="secondary-btn"
+
+href="#features"
+>
+
+Explore Features
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<h3>
+Platform Capabilities
+</h3>
+
+<div class="feature-item">
+CSV/XLS Recipient Processing
+</div>
+
+<div class="feature-item">
+Automated Email Campaigns
+</div>
+
+<div class="feature-item">
+HTML Email Formatting
+</div>
+
+<div class="feature-item">
+Optional Attachments
+</div>
+
+<div class="feature-item">
+Multi-Recipient Automation
+</div>
+
+<div class="feature-item">
+Scalable Backend Workflows
+</div>
+
+<div class="feature-item">
+Long-term Reusable Architecture
+</div>
+
+</div>
+
+</section>
+
+<section
+class="section"
+id="features"
+>
+
+<h2 class="section-title">
+
+Why This Platform?
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+Digital Workflow
+</h3>
+
+<p>
+
+Transforms manual campaign handling into a
+fully digital automated workflow system.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Scalable Automation
+</h3>
+
+<p>
+
+Supports multiple recipients, large datasets,
+and enterprise-ready processing pipelines.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+Backend Integration
+</h3>
+
+<p>
+
+Powered by n8n backend automation with
+long-term reusable workflow architecture.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>
+Developed By Saidattu
+</h2>
+
+<p>
+
+
+📍 Dresden, Deutschland<br>
+
+📞 +49 15510864625<br>
+
+📧 saidattu7788@gmail.com
+
+</p>
+
+</footer>
+
+</body>
+
+</html>
